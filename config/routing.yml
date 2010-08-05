@@ -1,0 +1,6 @@
+myQuestion:
+  url: /question
+  class: sfRequestRoute
+  params: { module: myQuestion, action: create }
+  requirements:
+    sf_method: post

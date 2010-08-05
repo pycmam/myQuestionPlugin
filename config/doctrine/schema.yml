@@ -1,0 +1,23 @@
+myQuestion:
+  tableName:            my_questions
+  actAs:
+    Timestampable:      ~
+  columns:
+    name:               { type: string(255), notnull: true }
+    email:              { type: string(255), notnull: true }
+    phone:              { type: string(255) }
+    subj:               { type: string(255), notnull: true }
+    question:           { type: string, notnull: true }
+    cc_id:              { type: integer }
+    #realty_id:          { type: integer }
+  relations:
+    Cc:
+      class: sfGuardUser
+      local: cc_id
+      onDelete: SET NULL
+    #Realty:
+    #  class: RealtyObject
+    #  local: realty_id
+    #  onDelete: SET NULL
+  options:
+    charset: utf8

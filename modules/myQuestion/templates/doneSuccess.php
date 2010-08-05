@@ -1,0 +1,1 @@
+<strong><?php echo __('question.done') ?></strong>
