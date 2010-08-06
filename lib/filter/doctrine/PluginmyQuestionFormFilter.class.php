@@ -10,4 +10,10 @@
  */
 abstract class PluginmyQuestionFormFilter extends BasemyQuestionFormFilter
 {
+    public function setup()
+    {
+        parent::setup();
+
+        $this->disableLocalCSRFProtection();
+    }
 }

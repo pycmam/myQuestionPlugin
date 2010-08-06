@@ -1,6 +1,16 @@
-myQuestion:
-  url: /question
-  class: sfRequestRoute
-  params: { module: myQuestion, action: create }
-  requirements:
-    sf_method: post
+#myQuestion:
+#  url: /question
+#  class: sfRequestRoute
+#  params: { module: myQuestion, action: create }
+#  requirements:
+#    sf_method: post
+
+#myQuestionAdmin:
+#  class: sfDoctrineRouteCollection
+#  options:
+#    model:                myQuestion
+#    module:               myQuestionAdmin
+#    prefix_path:          /myQuestionAdmin
+#    column:               id
+#    with_wildcard_routes: true
+#    with_show:            true

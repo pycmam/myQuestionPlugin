@@ -76,6 +76,7 @@ class myQuestionActions extends sfActions
 
             $defaults['name'] = $profile->getName();
             $defaults['email'] = $profile->getEmail();
+            $defaults['phone'] = $profile->getMobilePhone();
         }
 
         return $defaults;
