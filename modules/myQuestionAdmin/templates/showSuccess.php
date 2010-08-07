@@ -12,7 +12,7 @@
     <h1>Вопрос на тему "<?php echo $question->getSubj() ?>"</h1>
 
     <div id="sf_admin_header">
-        <?php include_partial('controls', array('question' => $question)); ?>
+        <?php include_partial('controls', array('my_question' => $question)); ?>
     </div>
 
     <div id="sf_admin_content">

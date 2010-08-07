@@ -1,1 +1,0 @@
-<?php echo link_to($my_question->getSubj(), 'my_question_admin_show', $my_question) ?>

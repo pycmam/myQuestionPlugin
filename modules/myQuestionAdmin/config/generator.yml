@@ -23,9 +23,11 @@ generator:
         cc_id:        { label: Копия партнеру }
       list:
         title:      Вопросы пользователей <a href="#" onclick="jQuery('#sf_admin_bar').slideToggle('slow')">(поиск)</a>
-        display:    [_link_to_show, name, email, created_at]
+        display:    [subj, name, email, created_at]
         sort:       [created_at, DESC]
         object_actions:
+          show:
+            action: show
           _delete:
             credentials: Superadmin
       filter:  ~
