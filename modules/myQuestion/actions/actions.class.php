@@ -72,11 +72,11 @@ class myQuestionActions extends sfActions
         $defaults = array();
 
         if ($this->getUser()->isAuthenticated()) {
-            $profile = $this->getUser()->getGuardUser()->getProfile();
+            $user = $this->getUser()->getGuardUser();
 
-            $defaults['name'] = $profile->getName();
-            $defaults['email'] = $profile->getEmail();
-            $defaults['phone'] = $profile->getMobilePhone();
+            $defaults['name'] = sprintf('%s %s', $user->getFirstName(), $user->getLastName());
+            $defaults['email'] = $user->getEmailAddress();
+            $defaults['phone'] = $user->getPhone();
         }
 
         return $defaults;
