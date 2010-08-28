@@ -29,36 +29,36 @@ class myQuestionActions extends sfActions
     {
         $this->executeNew();
 
-        if ($request->isMethod('post')) {
-            $this->form->bind($request->getParameter($this->form->getName()));
+        $this->form->bind($request->getParameter($this->form->getName()));
 
-            if ($this->form->isValid()) {
-                $question = $this->form->save();
+        if ($success = $this->form->isValid()) {
+            $question = $this->form->save();
 
-                // админу
-                $this->getMailer()->sendTemplate('question.mail', null, $vars = array(
-                    'name' => $question->getName(),
-                    'phone' => $question->getPhone(),
-                    'email' => $from = $question->getEmail(),
-                    'subject' => $question->getSubj(),
-                    'question' => $question->getQuestion(),
-                ), sfConfig::get('app_mail_admin_email'), $from, $from);
+            // админу
+            $this->getMailer()->sendTemplate('question.mail', null, $vars = array(
+                'name'      => $question->getName(),
+                'phone'     => $question->getPhone(),
+                'email'     => $from = $question->getEmail(),
+                'subject'   => $question->getSubj(),
+                'question'  => $question->getQuestion(),
+            ), sfConfig::get('app_mail_admin_email'), $from, $from);
 
-                // копия
-                if ($ccUser = $question->getCc()) {
-                    $ccUser->getProfile()->sendMailTemplate('question.mail', $vars, $from, $from);
-                }
-
-                $this->setTemplate('done');
-            } else {
-
-                if ($request->isXmlHttpRequest()) {
-                    return $this->renderPartial('myQuestion/form', array('form' => $this->form));
-                }
-
-                $this->setTemplate('new');
+            // копия
+            if ($question->getCcId() && $ccUser = $question->getCc()) {
+                $ccUser->sendMailTemplate('question.mail', $vars, $from, $from);
             }
+
+            $this->executeNew();
         }
+
+        if ($request->isXmlHttpRequest()) {
+            return $this->renderPartial('myQuestion/form', array(
+                'form' => $this->form,
+                'success' => $success,
+            ));
+        }
+
+        $this->setTemplate('new');
     }
 
 
