@@ -46,7 +46,7 @@ class myQuestionActions extends sfActions
 
                 // копия
                 if ($ccUser = $question->getCc()) {
-                    $ccUser->getProfile()->sendMailTemplate('question.mail', $vars, $from, $from);
+                    $ccUser->sendMailTemplate('question.mail', $vars, $from, $from);
                 }
 
                 $this->setTemplate('done');
@@ -72,11 +72,11 @@ class myQuestionActions extends sfActions
         $defaults = array();
 
         if ($this->getUser()->isAuthenticated()) {
-            $profile = $this->getUser()->getGuardUser()->getProfile();
+            $user = $this->getUser()->getGuardUser();
 
-            $defaults['name'] = $profile->getName();
-            $defaults['email'] = $profile->getEmail();
-            $defaults['phone'] = $profile->getMobilePhone();
+            $defaults['name'] = $user->getName();
+            $defaults['email'] = $user->getEmailAddress();
+            $defaults['phone'] = $user->getMobilePhone();
         }
 
         return $defaults;
