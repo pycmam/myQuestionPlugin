@@ -24,10 +24,10 @@
                     <p class="content"><?php echo format_date($question->getCreatedAt()) ?></p>
                 </div>
 
-                <?php if ($question->getCcId() && $profile = $question->getCc()->getProfile()): ?>
+                <?php if ($question->getCcId() && $cc = $question->getCc()): ?>
                 <div class="row">
                     <strong class="label">Копия:</strong>
-                    <p class="content"><?php echo link_to(sprintf('%s (%s)', $profile->getName(), $profile->getEmail()), 'partner_show', $question->getCc()) ?></p>
+                    <p class="content"><?php echo link_to(sprintf('%s (%s)', $cc->getName(), $cc->getEmailAddress()), 'partner_show', $cc) ?></p>
                 </div>
                 <?php endif ?>
             </div>
