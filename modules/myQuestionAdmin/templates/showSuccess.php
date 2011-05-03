@@ -46,6 +46,10 @@
                     <strong class="label">Телефон:</strong>
                     <p class="content"><?php echo $question->getPhone() ?></p>
                 </div>
+                <div class="row">
+                    <strong class="label">Город:</strong>
+                    <p class="content"><?php echo $question->getCity() ?></p>
+                </div>
             </div>
         </div>
 
