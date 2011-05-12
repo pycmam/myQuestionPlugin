@@ -24,7 +24,7 @@ generator:
       list:
         title:      Вопросы пользователей <a href="#" onclick="jQuery('#sf_admin_bar').slideToggle('slow')">(поиск)</a>
         display:    [subj, name, email, city, created_at]
-        sort:       [created_at, DESC]
+        sort:       [created_at, desc]
         batch_actions: {}
         actions: {}
         object_actions:
