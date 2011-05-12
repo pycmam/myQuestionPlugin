@@ -25,11 +25,11 @@ generator:
         title:      Вопросы пользователей <a href="#" onclick="jQuery('#sf_admin_bar').slideToggle('slow')">(поиск)</a>
         display:    [subj, name, email, city, created_at]
         sort:       [created_at, DESC]
+        batch_actions: {}
+        actions: {}
         object_actions:
-          show:
+          "Просмотр":
             action: show
-          _delete:
-            credentials: Superadmin
       filter:
         display:    [email, city, subj, created_at]
       form:    ~
