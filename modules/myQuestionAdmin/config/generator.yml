@@ -20,7 +20,6 @@ generator:
         city:         { label: Город }
         link_to_show: { label: Тема }
         created_at:   { label: Отправлено }
-        realty_id:    { label: Объект }
         cc_id:        { label: Копия партнеру }
       list:
         title:      Вопросы пользователей <a href="#" onclick="jQuery('#sf_admin_bar').slideToggle('slow')">(поиск)</a>
@@ -31,7 +30,8 @@ generator:
             action: show
           _delete:
             credentials: Superadmin
-      filter:  ~
+      filter:
+        display:    [email, city, subj, created_at]
       form:    ~
       edit:    ~
       new:     ~

@@ -14,6 +14,6 @@ abstract class PluginmyQuestionFormFilter extends BasemyQuestionFormFilter
     {
         parent::setup();
 
-        $this->disableLocalCSRFProtection();
+        $this->useFields(array('city', 'email', 'subj', 'created_at'));
     }
 }
