@@ -14,6 +14,6 @@ abstract class PluginmyQuestionFormFilter extends BasemyQuestionFormFilter
     {
         parent::setup();
 
-        $this->useFields(array('city', 'email', 'subj', 'created_at'));
+        $this->useFields(array('email', 'subj', 'created_at'));
     }
 }

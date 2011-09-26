@@ -17,13 +17,12 @@ generator:
         name:         { label: Отправитель }
         email:        { label: E-Mail }
         subj:         { label: Тема }
-        city:         { label: Город }
         link_to_show: { label: Тема }
         created_at:   { label: Отправлено }
         cc_id:        { label: Копия партнеру }
       list:
         title:      Вопросы пользователей <a href="#" onclick="jQuery('#sf_admin_bar').slideToggle('slow')">(поиск)</a>
-        display:    [subj, name, email, city, created_at]
+        display:    [subj, name, email, created_at]
         sort:       [created_at, desc]
         batch_actions: {}
         actions: {}
@@ -31,7 +30,7 @@ generator:
           "Просмотр":
             action: show
       filter:
-        display:    [email, city, subj, created_at]
+        display:    [email, subj, created_at]
       form:    ~
       edit:    ~
       new:     ~

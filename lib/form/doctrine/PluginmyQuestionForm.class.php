@@ -21,6 +21,6 @@ abstract class PluginmyQuestionForm extends BasemyQuestionForm
         $this->validatorSchema['question']->setOption('min_length', 5);
         $this->validatorSchema['question']->setOption('max_length', 1024);
 
-        $this->useFields(array('name', 'email', 'phone', 'city', 'subj', 'question', 'cc_id'));
+        $this->useFields(array('name', 'email', 'phone', 'subj', 'question', 'cc_id'));
     }
 }

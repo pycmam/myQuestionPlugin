@@ -39,7 +39,6 @@ class myQuestionActions extends sfActions
                 $this->getMailer()->sendTemplate('question.mail', null, $vars = array(
                     'name' => $question->getName(),
                     'phone' => $question->getPhone(),
-                    'city' => $question->getCity(),
                     'email' => $from = $question->getEmail(),
                     'subject' => $question->getSubj(),
                     'question' => $question->getQuestion(),

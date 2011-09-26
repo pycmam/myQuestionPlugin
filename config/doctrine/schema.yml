@@ -6,7 +6,6 @@ myQuestion:
     name:               { type: string(255), notnull: true }
     email:              { type: string(255), notnull: true }
     phone:              { type: string(255), notnull: true }
-    city:               { type: string(255) }
     subj:               { type: string(255), notnull: true }
     question:           { type: string, notnull: true }
     cc_id:              { type: integer }
